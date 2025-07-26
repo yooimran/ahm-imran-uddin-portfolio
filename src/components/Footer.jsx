@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHeart, FaGithub, FaLinkedin, FaTwitter, FaArrowUp } from 'react-icons/fa';
+import { FaHeart, FaGithub, FaLinkedin, FaFacebook, FaArrowUp } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,19 +23,19 @@ const Footer = () => {
     {
       icon: FaGithub,
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/yooimran",
       color: "hover:text-gray-300"
     },
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://bd.linkedin.com/in/a-h-m-imran-uddin",
       color: "hover:text-blue-400"
     },
     {
-      icon: FaTwitter,
+      icon: FaFacebook,
       name: "Twitter",
-      url: "https://twitter.com",
+      url: "https://www.facebook.com/a.h.md.imran.uddin",
       color: "hover:text-blue-300"
     }
   ];
@@ -98,7 +98,7 @@ const Footer = () => {
                   href="mailto:your.email@example.com"
                   className="hover:text-white transition-colors duration-300"
                 >
-                  your.email@example.com
+                  ahmimranuddin@gmail.com
                 </a>
               </p>
               <p>
@@ -106,10 +106,10 @@ const Footer = () => {
                   href="tel:+15551234567"
                   className="hover:text-white transition-colors duration-300"
                 >
-                  +1 (555) 123-4567
+                  +8801303982229
                 </a>
               </p>
-              <p>Your City, Country</p>
+              <p>Dhaka, Bangladesh</p>
             </div>
             
             {/* Call to Action */}

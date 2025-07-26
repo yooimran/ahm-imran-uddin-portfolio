@@ -62,8 +62,8 @@ const Header = () => {
   
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-900/90 backdrop-blur-sm shadow-lg border-b border-gray-800 z-50 animate-slide-in-down">
-      <nav className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 w-full bg-gray-900/90 backdrop-blur-sm shadow-lg border-b border-gray-800 z-50 animate-slide-in-down ">
+      <nav className="container  px-6 max-w-7xl mx-auto py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="text-2xl font-bold text-white hover:scale-105 transition-transform duration-300">

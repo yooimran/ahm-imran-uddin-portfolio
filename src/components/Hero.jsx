@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaDownload } from 'react-icons/fa';
 import myImage from '../assets/my_image.jpg';
-
+import { FaFacebook } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -81,7 +81,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 animate-fade-in-up delay-700">
             <a
-              href="https://github.com"
+              href="https://github.com/yooimran"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-slate-300 transform hover:scale-110 transition-all duration-300"
@@ -89,7 +89,7 @@ const Hero = () => {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://bd.linkedin.com/in/a-h-m-imran-uddin"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-slate-300 transform hover:scale-110 transition-all duration-300"
@@ -97,12 +97,12 @@ const Hero = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.facebook.com/a.h.md.imran.uddin"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-slate-300 transform hover:scale-110 transition-all duration-300"
             >
-              <FaTwitter size={24} />
+              <FaFacebook size={24} />
             </a>
           </div>
 
