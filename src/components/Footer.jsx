@@ -106,7 +106,7 @@ const Footer = () => {
                   href="tel:+15551234567"
                   className="hover:text-white transition-colors duration-300"
                 >
-                  +8801303982229
+                  +880130398229
                 </a>
               </p>
               <p>Dhaka, Bangladesh</p>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,19 +35,19 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       title: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com"
+      value: "ahmimranuddin@gmail.com",
+      link: "mailto:ahmimranuddin@gmail.com"
     },
     {
       icon: FaPhone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+880130398229",
+      link: "tel:+880130398229"
     },
     {
       icon: FaMapMarkerAlt,
       title: "Location",
-      value: "Your City, Country",
+      value: "Dhaka, Bangladesh",
       link: "#"
     }
   ];
@@ -56,19 +56,19 @@ const Contact = () => {
     {
       icon: FaGithub,
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/yooimran",
       color: "hover:text-gray-300"
     },
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://linkedin.com/in/a-h-m-imran-uddin",
       color: "hover:text-blue-400"
     },
     {
-      icon: FaTwitter,
-      name: "Twitter",
-      url: "https://twitter.com",
+      icon: FaFacebook,
+      name: "Facebook",
+      url: "https://facebook.com/a.h.md.imran.uddin",
       color: "hover:text-blue-400"
     }
   ];

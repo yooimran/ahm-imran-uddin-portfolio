@@ -1,0 +1,176 @@
+[
+  {
+    "id": 1,
+    "title": "DevForum Social Network",
+    "description": "A full-stack social network platform with React, Node.js, and MongoDB. Features include user authentication, real-time messaging, and profile management.",
+    "longDescription": "DevForum is a comprehensive social network platform designed for developers and tech enthusiasts. Built with modern web technologies, it provides a space for developers to connect, share projects, collaborate on ideas, and build their professional network.\n\nThe platform features real-time messaging, project showcasing, skill-based connections, and a robust profile system. Users can create detailed profiles highlighting their skills, experience, and projects, making it easy to find potential collaborators or mentors.\n\nThe application follows best practices for scalability, security, and user experience, making it suitable for growing developer communities.",
+    "image": "/src/assets/img1.png",
+    "technologies": ["React", "Node.js", "MongoDB", "Tailwind CSS", "Socket.io", "JWT"],
+    "category": "fullstack",
+    "githubUrl": "https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-yooimran.git",
+    "liveUrl": "https://devforum-2025.web.app/",
+    "completedDate": "January 2025",
+    "featured": true,
+    "challenges": [
+      "Implementing real-time messaging with Socket.io",
+      "Building a scalable user authentication system",
+      "Creating responsive design for all devices",
+      "Optimizing database queries for large user bases"
+    ],
+    "features": [
+      "User authentication and authorization",
+      "Real-time messaging system",
+      "Project showcase and portfolio",
+      "Skill-based user connections",
+      "Professional networking tools",
+      "Responsive design for all devices",
+      "Advanced search and filtering",
+      "Email notifications and updates"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Shopify Custom Theme",
+    "description": "Custom Shopify theme built with Liquid, JavaScript, and CSS. Includes responsive design, advanced product filtering, and optimized performance.",
+    "longDescription": "This custom Shopify theme represents a complete e-commerce solution designed for modern online stores. Built with Shopify's Liquid templating language, JavaScript, and CSS, it provides a seamless shopping experience while maintaining excellent performance and SEO optimization.\n\nThe theme features advanced product filtering, customizable layouts, and integrated social media tools. It's optimized for conversion with strategically placed call-to-action buttons, trust signals, and streamlined checkout processes.\n\nThe design is fully responsive and has been tested across multiple devices and browsers to ensure consistent performance and user experience.",
+    "image": "/src/assets/my_image.jpg",
+    "technologies": ["Shopify Liquid", "JavaScript", "CSS", "HTML", "SCSS"],
+    "category": "ecommerce",
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://demo.com",
+    "completedDate": "December 2024",
+    "featured": true,
+    "challenges": [
+      "Mastering Shopify Liquid templating language",
+      "Optimizing performance for large product catalogs",
+      "Creating flexible, customizable layouts",
+      "Ensuring cross-browser compatibility"
+    ],
+    "features": [
+      "Responsive design for all devices",
+      "Advanced product filtering and search",
+      "Customizable homepage sections",
+      "Optimized checkout process",
+      "Social media integration",
+      "SEO optimization",
+      "Fast loading times",
+      "Multi-currency support"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Task Management App",
+    "description": "A productivity app built with React and Firebase. Features real-time updates, drag-and-drop functionality, and collaborative workspaces.",
+    "longDescription": "This task management application is designed to help teams and individuals stay organized and productive. Built with React and Firebase, it offers real-time collaboration features that make it perfect for both personal use and team projects.\n\nThe app includes advanced features like drag-and-drop task organization, deadline tracking, priority levels, and collaborative workspaces. Users can create projects, assign tasks to team members, and track progress in real-time.\n\nThe clean, intuitive interface combined with powerful functionality makes this app suitable for various use cases, from personal to-do lists to complex project management.",
+    "image": "/src/assets/react.svg",
+    "technologies": ["React", "Firebase", "Tailwind CSS", "JavaScript", "React DnD"],
+    "category": "frontend",
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://demo.com",
+    "completedDate": "November 2024",
+    "featured": false,
+    "challenges": [
+      "Implementing smooth drag-and-drop functionality",
+      "Managing real-time data synchronization",
+      "Creating intuitive user interface design",
+      "Handling complex state management"
+    ],
+    "features": [
+      "Real-time collaboration",
+      "Drag-and-drop task organization",
+      "Project and workspace management",
+      "Deadline and priority tracking",
+      "Team member assignment",
+      "Progress visualization",
+      "Mobile-responsive design",
+      "Offline capability"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Restaurant Website",
+    "description": "Modern restaurant website with online ordering system. Built with React and integrated with payment processing and order management.",
+    "longDescription": "This modern restaurant website showcases how technology can enhance the dining experience. Built with React and integrated with payment processing systems, it provides customers with an easy way to browse menus, place orders, and make reservations.\n\nThe website features an elegant design that reflects the restaurant's brand, intuitive navigation, and mobile-optimized ordering system. The admin panel allows staff to manage menus, track orders, and handle reservations efficiently.\n\nSpecial attention was paid to performance optimization and user experience, ensuring fast loading times and smooth interactions across all devices.",
+    "image": "/loogo.png",
+    "technologies": ["React", "Tailwind CSS", "JavaScript", "HTML", "Stripe API"],
+    "category": "frontend",
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://demo.com",
+    "completedDate": "October 2024",
+    "featured": false,
+    "challenges": [
+      "Integrating payment processing systems",
+      "Creating an intuitive ordering interface",
+      "Optimizing for mobile ordering experience",
+      "Managing complex menu structures"
+    ],
+    "features": [
+      "Online ordering system",
+      "Payment processing integration",
+      "Reservation management",
+      "Menu customization tools",
+      "Order tracking",
+      "Mobile-optimized design",
+      "Admin dashboard",
+      "Customer reviews system"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Shopify App Development",
+    "description": "Custom Shopify app for inventory management with advanced analytics and reporting features. Built using Shopify API and modern web technologies.",
+    "longDescription": "This custom Shopify app was developed to help store owners manage their inventory more efficiently. Built using the Shopify API and modern web technologies, it provides advanced analytics and reporting features that aren't available in standard Shopify tools.\n\nThe app integrates seamlessly with existing Shopify stores and provides real-time inventory tracking, automated reorder alerts, and comprehensive reporting dashboards. Store owners can make data-driven decisions about their inventory management.\n\nThe development process involved deep integration with Shopify's ecosystem, ensuring the app follows all best practices for security, performance, and user experience.",
+    "image": "/vite.svg",
+    "technologies": ["Shopify API", "Node.js", "React", "MongoDB", "Express"],
+    "category": "ecommerce",
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://demo.com",
+    "completedDate": "September 2024",
+    "featured": true,
+    "challenges": [
+      "Mastering Shopify API integration",
+      "Building real-time inventory tracking",
+      "Creating comprehensive analytics dashboard",
+      "Ensuring data security and compliance"
+    ],
+    "features": [
+      "Real-time inventory tracking",
+      "Automated reorder alerts",
+      "Advanced analytics dashboard",
+      "Sales performance reports",
+      "Multi-location support",
+      "API integration with suppliers",
+      "Custom reporting tools",
+      "Mobile app companion"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Portfolio Website",
+    "description": "Responsive portfolio website showcasing web development projects. Built with React and Tailwind CSS with smooth animations and modern design.",
+    "longDescription": "This portfolio website was created to showcase web development skills and projects in an engaging and professional manner. Built with React and Tailwind CSS, it features smooth animations, modern design principles, and optimal performance across all devices.\n\nThe website includes sections for projects, skills, experience, and contact information. Special attention was paid to user experience, with intuitive navigation and engaging visual elements that highlight key information without overwhelming the visitor.\n\nThe development process focused on creating a unique digital presence that effectively communicates technical skills while maintaining professional appeal.",
+    "image": "/src/assets/img1.png",
+    "technologies": ["React", "Tailwind CSS", "JavaScript", "Framer Motion"],
+    "category": "frontend",
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://demo.com",
+    "completedDate": "August 2024",
+    "featured": false,
+    "challenges": [
+      "Creating engaging animations and interactions",
+      "Optimizing performance for fast loading",
+      "Designing responsive layouts for all devices",
+      "Balancing visual appeal with usability"
+    ],
+    "features": [
+      "Responsive design for all devices",
+      "Smooth animations and transitions",
+      "Interactive project showcases",
+      "Contact form integration",
+      "SEO optimization",
+      "Fast loading performance",
+      "Modern design aesthetics",
+      "Cross-browser compatibility"
+    ]
+  }
+]

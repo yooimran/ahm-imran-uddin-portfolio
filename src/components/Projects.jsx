@@ -1,79 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import { FaGithub, FaExternalLinkAlt, FaShopify, FaReact, FaJs, FaHtml5, FaEye } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiFirebase } from 'react-icons/si';
-import { Link } from 'react-router';
 
 const Projects = () => {
+  const navigate = useNavigate();
+  const [projects, setProjects] = useState([]);
   const [activeFilter, setActiveFilter] = useState('all');
-
-  const projects = [
-    {
-      id: 1,
-      title: "E-commerce Website",
-      description: "A full-stack e-commerce platform with React, Node.js, and MongoDB. Features include user authentication, shopping cart, payment integration, and admin panel.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-      category: "fullstack",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Shopify Custom Theme",
-      description: "Custom Shopify theme built with Liquid, JavaScript, and CSS. Includes responsive design, advanced product filtering, and optimized performance.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Shopify Liquid", "JavaScript", "CSS", "HTML"],
-      category: "ecommerce",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Task Management App",
-      description: "A productivity app built with React and Firebase. Features real-time updates, drag-and-drop functionality, and collaborative workspaces.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Firebase", "Tailwind CSS", "JavaScript"],
-      category: "frontend",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Restaurant Website",
-      description: "Modern restaurant website with online ordering system. Built with React and integrated with payment processing and order management.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Tailwind CSS", "JavaScript", "HTML"],
-      category: "frontend",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "Shopify App Development",
-      description: "Custom Shopify app for inventory management with advanced analytics and reporting features. Built using Shopify API and modern web technologies.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Shopify API", "Node.js", "React", "MongoDB"],
-      category: "ecommerce",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 6,
-      title: "Portfolio Website",
-      description: "Responsive portfolio website showcasing web development projects. Built with React and Tailwind CSS with smooth animations and modern design.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Tailwind CSS", "JavaScript"],
-      category: "frontend",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
-      featured: false
-    }
-  ];
+  const [loading, setLoading] = useState(true);
 
   const filters = [
     { key: 'all', label: 'All Projects' },
@@ -83,12 +17,39 @@ const Projects = () => {
     { key: 'ecommerce', label: 'E-commerce' }
   ];
 
+  // Load projects data from JSON file
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        setLoading(true);
+        // Simulate loading delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Import projects data from JSON file
+        const projectsModule = await import('../data/projects.json');
+        const projectsData = projectsModule.default;
+        
+        setProjects(projectsData);
+        console.log('✅ Projects loaded from JSON:', projectsData.length);
+      } catch (error) {
+        console.error('Error loading projects:', error);
+        setProjects([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProjects();
+  }, []);
+
+  // Filter projects based on active filter
   const filteredProjects = projects.filter(project => {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'featured') return project.featured;
     return project.category === activeFilter;
   });
 
+  // Get technology icon
   const getTechIcon = (tech) => {
     const icons = {
       'React': FaReact,
@@ -102,6 +63,44 @@ const Projects = () => {
     };
     return icons[tech] || FaJs;
   };
+
+  if (loading) {
+    return (
+      <section id="projects" className="py-20 bg-gray-900 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center">
+              <div className="animate-pulse">
+                <div className="h-8 bg-gray-700 rounded w-64 mx-auto mb-4"></div>
+                <div className="h-4 bg-gray-700 rounded w-96 mx-auto"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                {[1, 2, 3, 4, 5, 6].map(i => (
+                  <div key={i} className="bg-gray-800 rounded-2xl overflow-hidden animate-pulse">
+                    <div className="h-48 bg-gray-700"></div>
+                    <div className="p-6">
+                      <div className="h-6 bg-gray-700 rounded mb-3"></div>
+                      <div className="h-4 bg-gray-700 rounded mb-2"></div>
+                      <div className="h-4 bg-gray-700 rounded mb-4 w-3/4"></div>
+                      <div className="flex gap-2 mb-6">
+                        <div className="h-6 bg-gray-700 rounded-full w-16"></div>
+                        <div className="h-6 bg-gray-700 rounded-full w-20"></div>
+                      </div>
+                      <div className="flex gap-2">
+                        <div className="h-8 bg-gray-700 rounded flex-1"></div>
+                        <div className="h-8 bg-gray-700 rounded flex-1"></div>
+                        <div className="h-8 bg-gray-700 rounded flex-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="projects" className="py-20 bg-gray-900 relative overflow-hidden">
@@ -164,17 +163,30 @@ const Projects = () => {
                 className="group bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up border border-gray-700"
                 style={{animationDelay: `${index * 150}ms`}}
               >
-                {/* Project Image */}
-                <div className="relative overflow-hidden h-48 bg-gradient-to-br from-blue-900/30 to-purple-900/30">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl text-gray-500">🖥️</div>
+                {/* Project Image - SIMPLIFIED */}
+                <div className="h-48 bg-gray-700">
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      console.log(`Image failed to load: ${project.image}`);
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                    onLoad={() => console.log(`✅ Image loaded: ${project.title}`)}
+                  />
+                  <div className="w-full h-full bg-gray-600 flex items-center justify-center text-white" style={{display: 'none'}}>
+                    <div className="text-center">
+                      <div className="text-4xl mb-2">🖼️</div>
+                      <div className="text-sm">{project.title}</div>
+                    </div>
                   </div>
                   {project.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute top-4 left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">
                       Featured
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
                 {/* Project Content */}
@@ -189,12 +201,12 @@ const Projects = () => {
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, index) => {
+                    {project.technologies.map((tech, techIndex) => {
                       const IconComponent = getTechIcon(tech);
                       return (
                         <span
-                          key={index}
-                          className="flex items-center gap-1 bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-600"
+                          key={techIndex}
+                          className="flex items-center gap-1 bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-gray-600 transition-colors duration-200"
                         >
                           <IconComponent className="text-sm" />
                           {tech}
@@ -205,13 +217,13 @@ const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-2">
-                    <Link
-                      to={`/project/${project.id}`}
-                      className="flex items-center gap-2 bg-slate-700 text-white px-3 py-2 rounded-lg hover:bg-slate-600 transition-colors duration-300 text-sm font-medium flex-1 justify-center"
+                    <button
+                      onClick={() => navigate(`/project/${project.id}`)}
+                      className="flex items-center gap-2 bg-slate-700 text-white px-3 py-2 rounded-lg hover:bg-slate-600 transition-colors duration-300 text-sm font-medium flex-1 justify-center cursor-pointer"
                     >
                       <FaEye />
                       Details
-                    </Link>
+                    </button>
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -235,6 +247,15 @@ const Projects = () => {
               </div>
             ))}
           </div>
+
+          {/* Empty State */}
+          {filteredProjects.length === 0 && !loading && (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold text-white mb-2">No Projects Found</h3>
+              <p className="text-gray-300">Try selecting a different filter to see more projects.</p>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="text-center mt-16">

@@ -1,12 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt, FaCalendar, FaTags } from 'react-icons/fa';
 import { Link } from 'react-router';
 
 const ProjectDetail = () => {
-  // Control scroll behavior when component mounts
+  const { id } = useParams();
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Load project data from JSON file
   useEffect(() => {
+    const loadProject = async () => {
+      try {
+        setLoading(true);
+        
+        // Import projects data from JSON file
+        const projectsModule = await import('../data/projects.json');
+        const projectsData = projectsModule.default;
+        
+        // Find project by ID
+        const foundProject = projectsData.find(p => p.id === parseInt(id));
+        setProject(foundProject);
+        
+        console.log('✅ Project loaded from JSON:', foundProject?.title || 'Not found');
+      } catch (error) {
+        console.error('Error loading project:', error);
+        setProject(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      loadProject();
+    }
+
     // Scroll to a natural position (slightly below the header) instead of top
     const timer = setTimeout(() => {
       window.scrollTo({ 
@@ -16,47 +46,43 @@ const ProjectDetail = () => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, []);
-  // This would typically get project data from props or URL params
-  const project = {
-    id: 1,
-    title: "E-commerce Website",
-    description: "A comprehensive full-stack e-commerce platform built with modern web technologies. This project demonstrates expertise in both frontend and backend development, featuring a responsive design, secure payment processing, and robust admin panel.",
-    longDescription: `
-      This e-commerce platform represents a complete solution for online retail businesses. 
-      Built with React for the frontend and Node.js for the backend, it provides a seamless 
-      shopping experience for customers while offering powerful management tools for administrators.
+  }, [id]);
 
-      Key features include user authentication, shopping cart functionality, payment integration 
-      with Stripe, order tracking, inventory management, and comprehensive admin dashboard. 
-      The responsive design ensures optimal performance across all devices.
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-slate-400 mx-auto mb-4"></div>
+          <p className="text-gray-300">Loading project details...</p>
+        </div>
+      </div>
+    );
+  }
 
-      The project follows best practices for security, performance, and scalability, making 
-      it suitable for businesses of all sizes.
-    `,
-    image: "/api/placeholder/800/400",
-    technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Stripe", "JWT"],
-    category: "fullstack",
-    githubUrl: "https://github.com",
-    liveUrl: "https://demo.com",
-    completedDate: "December 2024",
-    challenges: [
-      "Implementing secure payment processing with Stripe API",
-      "Building a scalable database schema for products and orders",
-      "Creating a responsive design that works across all devices",
-      "Optimizing performance for large product catalogs"
-    ],
-    features: [
-      "User authentication and authorization",
-      "Shopping cart and wishlist functionality",
-      "Secure payment processing",
-      "Order tracking and history",
-      "Admin dashboard for inventory management",
-      "Responsive design for all devices",
-      "Search and filtering capabilities",
-      "Email notifications for orders"
-    ]
-  };
+  // Project not found
+  if (!project) {
+    return (
+      <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+        <Header />
+        <main className="pt-20 relative z-10 flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="text-6xl mb-4">🔍</div>
+            <h2 className="text-3xl font-bold text-white mb-4">Project Not Found</h2>
+            <p className="text-gray-300 mb-8">The project you're looking for doesn't exist.</p>
+            <Link 
+              to="/#projects"
+              className="inline-flex items-center gap-2 bg-slate-700 text-white px-6 py-3 rounded-lg hover:bg-slate-600 transition-colors duration-300"
+            >
+              <FaArrowLeft />
+              Back to Projects
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 relative overflow-hidden">
@@ -148,8 +174,24 @@ const ProjectDetail = () => {
         <section className="py-8">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto animate-fade-in-up delay-300">
-              <div className="rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-700 h-96 flex items-center justify-center border border-gray-600 hover:scale-105 transition-transform duration-500">
-                <div className="text-8xl text-gray-500">🖥️</div>
+              <div className="rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-700 h-96 border border-gray-600 hover:scale-105 transition-transform duration-500">
+                <img 
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.log(`Image failed to load: ${project.image}`);
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                  onLoad={() => console.log(`✅ Image loaded: ${project.title}`)}
+                />
+                <div className="w-full h-full bg-gray-600 flex items-center justify-center text-white" style={{display: 'none'}}>
+                  <div className="text-center">
+                    <div className="text-8xl mb-4">🖥️</div>
+                    <div className="text-xl font-semibold">{project.title}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
