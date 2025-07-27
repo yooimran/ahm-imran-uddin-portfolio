@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { FaGithub, FaExternalLinkAlt, FaShopify, FaReact, FaJs, FaHtml5, FaEye } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiFirebase } from 'react-icons/si';
+import { FaGithub, FaExternalLinkAlt, FaShopify, FaReact, FaJs, FaHtml5, FaEye, FaNodeJs, FaKey } from 'react-icons/fa';
+import { SiTailwindcss, SiMongodb, SiFirebase, SiExpress } from 'react-icons/si';
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -53,13 +53,19 @@ const Projects = () => {
   const getTechIcon = (tech) => {
     const icons = {
       'React': FaReact,
+      'React 19': FaReact,
       'JavaScript': FaJs,
       'HTML': FaHtml5,
       'Tailwind CSS': SiTailwindcss,
       'MongoDB': SiMongodb,
       'Firebase': SiFirebase,
+      'Firebase Auth': SiFirebase,
       'Shopify Liquid': FaShopify,
-      'Shopify API': FaShopify
+      'Shopify API': FaShopify,
+      'Node.js': FaNodeJs,
+      'JWT': FaKey,
+      'Express.js': SiExpress,
+      'Express': SiExpress
     };
     return icons[tech] || FaJs;
   };

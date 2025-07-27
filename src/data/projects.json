@@ -1,31 +1,39 @@
 [
   {
     "id": 1,
-    "title": "DevForum Social Network",
-    "description": "A full-stack social network platform with React, Node.js, and MongoDB. Features include user authentication, real-time messaging, and profile management.",
-    "longDescription": "DevForum is a comprehensive social network platform designed for developers and tech enthusiasts. Built with modern web technologies, it provides a space for developers to connect, share projects, collaborate on ideas, and build their professional network.\n\nThe platform features real-time messaging, project showcasing, skill-based connections, and a robust profile system. Users can create detailed profiles highlighting their skills, experience, and projects, making it easy to find potential collaborators or mentors.\n\nThe application follows best practices for scalability, security, and user experience, making it suitable for growing developer communities.",
+    "title": "DevFroum",
+    "description": "DevFroum is a modern developer community platform and forum where developers can share knowledge, discuss coding topics, ask questions, and build connections. It provides a space for both novice and experienced developers to learn, teach, and grow together in their coding journey.",
+    "longDescription": "Features\nUser Authentication: Secure sign up, login, and profile management with Firebase integration\nDiscussion Threads: Create and participate in coding discussions and Q&A threads\nPost Management: Create, edit, delete, and share posts about development topics\nComment System: Engage with posts through comments and replies\nUser Profiles: Personalized profiles with user statistics and recent activity\nMembership System: Gold and Bronze membership tiers with enhanced features\nAdmin Dashboard: Comprehensive admin panel for platform management\nUser Management: Admin tools for managing users and community moderation\nReported Content: Report and moderate inappropriate content\nAnnouncements: Admin announcements and community updates\nPayment Integration: Stripe integration for premium memberships\nResponsive Design: Mobile-first design that works on all devices\nReal-time Interactions: Dynamic voting, commenting, and social features\n\nTech Stack\nFrontend: React 19, Vite, Tailwind CSS, DaisyUI\nRouting: React Router v7\nAuthentication: Firebase Auth\nBackend: Node.js, Express.js, MongoDB\nPayment: Stripe Integration\nUI Components: React Icons for iconography, Swiper for carousels, React Toastify for notifications, SweetAlert2 for modals, React Simple Typewriter for animations, React Fast Marquee for scrolling text\nDevelopment: ESLint, Vite dev server\nTesting: Jest with SWC transform\n\nGetting Started\nPrerequisites: Node.js (v18 or higher) & npm, MongoDB, Firebase account for authentication, Stripe account for payments (optional)\n\nKey Features Breakdown\nFor Users: Create and manage personal profiles, Write and publish posts about development topics, Comment and engage with community discussions, Vote on posts and comments, Join premium membership for enhanced features, Access user dashboard for post management\nFor Admins: Comprehensive admin dashboard, User management and moderation tools, Content moderation and reported content review, Make platform-wide announcements, Manage membership and payments, Monitor platform analytics\n\nBackend Server\nThis is the backend server for the DevFroum application, built with Node.js, Express, and MongoDB.\nFeatures: JWT authentication (email/password, Google, GitHub), Course creation, update, and deletion, Course enrollment with seat limits and max 3 active enrollments per user, Enroll/Unenroll endpoints (protected), User and course management endpoints, AI-powered chat functionality with OpenAI integration\nDependencies: express (^5.1.0) - Web framework for Node.js, mongodb (^6.16.0) - MongoDB driver for Node.js, cors (^2.8.5) - Cross-Origin Resource Sharing middleware, dotenv (^16.5.0) - Environment variable loader, jsonwebtoken (^9.0.2) - JWT implementation for authentication, nodemon (^3.1.10) - Development server with auto-restart",
     "image": "https://i.ibb.co/whdFV5W3/firebae-test-web-web-app-5.png",
-    "technologies": ["React", "Node.js", "MongoDB", "Tailwind CSS", "Socket.io", "JWT"],
+    "technologies": ["React 19", "Tailwind CSS", "JWT",  "Firebase Auth", "Node.js","MongoDB"],
     "category": "fullstack",
     "githubUrl": "https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-yooimran.git",
     "liveUrl": "https://devforum-2025.web.app/",
     "completedDate": "January 2025",
     "featured": true,
     "challenges": [
-      "Implementing real-time messaging with Socket.io",
-      "Building a scalable user authentication system",
-      "Creating responsive design for all devices",
-      "Optimizing database queries for large user bases"
+      "Building a scalable user authentication and membership system",
+      "Implementing real-time interactions and notifications",
+      "Integrating Stripe for payments",
+      "Developing a comprehensive admin dashboard",
+      "Ensuring mobile-first responsive design",
+      "AI-powered chat integration with OpenAI"
     ],
     "features": [
-      "User authentication and authorization",
-      "Real-time messaging system",
-      "Project showcase and portfolio",
-      "Skill-based user connections",
-      "Professional networking tools",
-      "Responsive design for all devices",
-      "Advanced search and filtering",
-      "Email notifications and updates"
+      "User Authentication",
+      "Discussion Threads",
+      "Post Management",
+      "Comment System",
+      "User Profiles",
+      "Membership System",
+      "Admin Dashboard",
+      "User Management",
+      "Reported Content Moderation",
+      "Announcements",
+      "Payment Integration",
+      "Responsive Design",
+      "Real-time Interactions",
+      "AI-powered Chat"
     ]
   },
   {
